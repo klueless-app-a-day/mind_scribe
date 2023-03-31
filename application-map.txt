@@ -1,0 +1,58 @@
+# [MindScribe](https://www.mindmeister.com/map/2659263137)
+
+ - Reads and exports Mindmeister files
+    - Sample
+        - Language Application Digital
+Transformation
+ - Command line tool
+    - extract
+        - Extract the contents of a .mind file into a folder structure.
+        - expand .mind file
+            - puts a .mind file into a folder structure
+    - read
+        - Read and display the contents of a .mind file.
+    - log
+        - Display the mind map in a console-friendly, pretty format.
+    - format (aka as)
+        - Convert the mind map into a specified document format, with the second argument defining the target format, such as 'markdown'.
+        - markdown is default when nothing provided
+ - Commands
+    - extract
+    - read
+    - log
+    - format-as
+ - Data Loader
+    - Used to process different mindmaps
+        - Mindmeister from web api
+        - Mindmeister from local .mind (zip file)
+        - Other types of mindmap format
+    - .mind file processor
+        - Unzip the file
+        - Put mindmap.json in folder
+        - Put images in images sub folder
+ - Models
+    - Each data reader will be associated with a data model
+    - .mind will be associated with MindMeister data
+    - There should be a models subfolder for each type of model
+ - Formatters
+    - there should be many formatters
+    - markdown
+        - default formatter
+ - Markdown Formatter (render a Markdown document using simple rules)
+    - Is there a rust library that will do
+this already?
+    - Use #, ##, ### and #### to write out level 1,2,3 and 4 data
+        - unless the data is a child node 
+    - If the data is child node
+        - if it is one node, write as a paragraph
+        - Determine if it is paragraph/sentence or bullet point
+            - Can I use AI to do this?
+            - if there is a icon "bullet" in parent then this is a bullet point
+            - if not then calculate a probability by looking at the nodes attached to the parent
+                - lots of short sentences (bullet)
+                - less then two sentences (sentence)
+                - long sentences (sentence)
+    - example
+        - markdown
+ - Example
+    - Put some real data in here
